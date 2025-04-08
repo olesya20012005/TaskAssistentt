@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>ТаскАссистент</title>
+</head>
+<body>
+    <div class="container1">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+                
+            </div>
+            <nav>
+                <div class="menu-buttons">
+                    <a href="#" class="button active">Задачи</a>
+                    <a href="history.html" class="button">Создать задачу</a>
+                </div>
+            </nav>
+            <a href="src/logout.php" class="logout">&larr; Выйти</a>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Существующие задачи</h2>
+                <div class="user">
+                    <span><?= htmlspecialchars($userName) ?></span>
+                    <div class="user-avatar"></div>
+                </div>
+            </header>
+            <section class="requestions">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Название задачи</th>
+                        <th>Ответственный</th>
+                        <th>Дедлайн</th>
+                        <th>Приоритет</th>
+                        <th>Описание</th>
+                        <th>Статус</th>
+                        
+                    </tr>
+                    
+                        
+                   
+                    </thead>
+                    <tbody>
+                    <?php if (empty($requests)): ?>
+                    <tr>
+                        <td>Разобрать файлы</td>
+                    
+                        <td>Жёлудь Александр</td>
+                    
+                        <td>10.04.2025</td>
+                    
+                        <td>В первую очередь</td>
+                   
+                        <td>Разобрать все файлы по необходим категориям и папкам.</td>
+                   
+                        <td><form method="POST" action="src/update_status.php">
+                            <input type="hidden" name="app_id" value="<?= htmlspecialchars($request['app_id']) ?>">
+                            <select name="status" class="status-select" onchange="this.form.submit()">
+                                <option value="Ожидает" <?= $request['status'] === 'Ожидает' ? 'selected' : '' ?>>Ожидает</option>
+                                <option value="Выполнено" <?= $request['status'] === 'Выполнено' ? 'selected' : '' ?>>Выполнено</option>
+                                <option value="Отменено" <?= $request['status'] === 'Отменено' ? 'selected' : '' ?>>Отменено</option>
+                            </select>
+                        </form></td>
+                    </tr>
+                    <?php else: ?>
+                        <?php foreach ($requests as $request): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($request['user_name'] . ' ' . $request['user_surname']) ?></td>
+                                <td><?= htmlspecialchars($request['user_login']) ?></td>
+                                <td><?= htmlspecialchars($request['user_phone']) ?></td>
+                                <td><?= htmlspecialchars($request['service']) ?></td>
+                                <td><?= htmlspecialchars($request['app_date']) ?></td>
+                                <td>
+                                    <form method="POST" action="src/update_status.php">
+                                        <input type="hidden" name="app_id" value="<?= htmlspecialchars($request['app_id']) ?>">
+                                        <select name="status" class="status-select" onchange="this.form.submit()">
+                                            <option value="Ожидает" <?= $request['status'] === 'Ожидает' ? 'selected' : '' ?>>Ожидает</option>
+                                            <option value="Выполнено" <?= $request['status'] === 'Выполнено' ? 'selected' : '' ?>>Выполнено</option>
+                                            <option value="Отменено" <?= $request['status'] === 'Отменено' ? 'selected' : '' ?>>Отменено</option>
+                                        </select>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button onclick="showDetails(<?= htmlspecialchars(json_encode($request)) ?>)">⋮</button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    </tbody>
+                </table>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>

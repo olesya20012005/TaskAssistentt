@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>ТаскАссистент</title>
+</head>
+<body>
+    <div class="container1" style="height: auto;">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+            </div>
+            <nav>
+                <div class="menu-buttons">
+                    <a href="hhistory.html" class="button">Задачи</a>
+                    <a href="#" class="button active">Создать задачу</a>
+                </div>
+            </nav>
+            <a href="src/logout.php" class="logout">&larr; Выйти</a>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Создать задачу</h2>
+                <div class="user">
+                    <span></span>
+                    <div class="user-avatar"></div>
+                </div>
+            </header>
+            <section class="request-form">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="task">Название задачи <span class="required">*</span></label>
+                        <input type="text" id="task" name="task" placeholder="Опишите задачу" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service_type">Ответственный<span class="required">*</span></label>
+                        <select id="service_type" name="service_type" required>
+                            <option value="">Выберите ответственного</option>
+                            <option value="Жёлудь Александр">Жёлудь Александр</option>
+                            <option value="Зинин Илья">Зинин Илья</option>
+                            <option value="Колтаков Вячеслав">Колтаков Вячеслав</option>
+                            <option value="Журавлев Максим">Журавлев Максим</option>
+                            <option value="Тудвасев Евгений">Тудвасев Евгений</option>
+                            <option value="Иванов Даниил">Иванов Даниил</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="data">Дедлайн <span class="required">*</span></label>
+                        <input type="date" id="data" name="data" placeholder="__.__.____" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Приоритет <span class="required">*</span></label>
+                        <div class="payment-options">
+                            <label>
+                                <input type="radio" name="payment_type" value="В первую очередь" required> В первую очередь
+                            </label>
+                            <label>
+                                <input type="radio" name="payment_type" value="Позже"> Позже
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Описание <span class="required">*</span></label>
+                        <textarea id="status" name="status" placeholder="Введите описание задачи" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Создать</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

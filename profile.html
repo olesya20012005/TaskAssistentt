@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>ТаскАссистент</title>
+</head>
+<body>
+<div class="container1">
+    <!-- Левое меню -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип">
+           
+        </div>
+        <nav>
+            <div class="menu-buttons">
+                <a href="#" class="button active">Задачи</a>
+            </div>
+        </nav>
+        <a href="src/logout.php" class="logout">&larr; Выйти</a>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <header class="main-header">
+            <h2>Существующие задачи</h2>
+        </header>
+        <section class="requestions">
+            <table>
+                <thead>
+                <tr>
+                    <th>Название задачи</th>
+                    <th>Ответственный</th>
+                    <th>Дедлайн</th>
+                    <th>Приоритет</th>
+                    <th>Описание</th>
+                    
+                    
+                </tr>
+                
+                    
+               
+                </thead>
+                <tbody>
+                <?php if (empty($requests)): ?>
+                <tr>
+                    <td>Разобрать файлы</td>
+                
+                    <td>Жёлудь Александр</td>
+                
+                    <td>10.04.2025</td>
+                
+                    <td>В первую очередь</td>
+               
+                    <td>Разобрать все файлы по необходим категориям и папкам.</td>
+               
+                    
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    </main>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal" id="detailsModal">
+    <div class="modal-close" onclick="closeModal()">×</div>
+    <div class="modal-header">Подробности заявки</div>
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+    function showDetails(request) {
+        const modal = document.getElementById('detailsModal');
+        const content = document.getElementById('modalContent');
+        content.innerHTML = `
+            <p><strong>Имя:</strong> ${request.user_name} ${request.user_surname}</p>
+            <p><strong>Логин:</strong> ${request.user_login}</p>
+            <p><strong>Адрес:</strong> ${request.street}, дом ${request.house}, подъезд ${request.pod}, квартира ${request.flat}</p>
+            <p><strong>Телефон:</strong> ${request.user_phone}</p>
+            <p><strong>Услуга:</strong> ${request.service}</p>
+            <p><strong>Оплата:</strong> ${request.payment}</p>
+            <p><strong>Дата создания:</strong> ${request.app_date}</p>
+            <p><strong>Статус:</strong> ${request.status}</p>
+        `;
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('detailsModal');
+        modal.style.display = 'none';
+    }
+</script>
+</body>
+</html>

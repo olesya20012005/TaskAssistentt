@@ -1,0 +1,915 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background-color: #C8F1FF;
+}
+
+img{
+	width: 880px
+}
+
+.container {
+    max-width: 1600px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: "Unbounded", sans-serif;
+}
+
+h1, h2 {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+p {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+p.bg {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+button, .button {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 21.5px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    text-transform: uppercase;
+    background-color: #5EC3FF;
+    border: #105781;
+    border-radius: 128px;
+    padding: 27px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+button:hover, .button:hover {
+    background-size: 1000px;
+    background-position: 400px;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+button span, .button span {
+    background-color: #032A41;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header {
+    padding: 37px 18px;
+    margin-bottom: 80px;
+}
+
+.header nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.header nav ul li {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 21.5px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-right: 13.8%;
+    transition: all 0.3s ease-out;
+}
+
+.header nav ul li:hover {
+    font-weight: 700;
+}
+
+.header nav .logo {
+    color: #fff;
+    font-family: "Unbounded", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 21.5px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.header nav ul li:last-child {
+    margin-right: 0;
+}
+
+.promo {
+    position: relative;
+    background: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    border-radius: 20px;
+    color: #fff;
+    padding: 0 0 70px 16px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.promo .promo-img {
+    position: absolute;
+    right: -15px;
+    bottom: -1px;
+    z-index: -1;
+}
+
+.promo h1 {
+    margin-bottom: 22px;
+}
+
+.promo .hr {
+    display: block;
+    width: 907.5px;
+    height: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    margin-bottom: 14px;
+}
+
+.promo button, .promo .button {
+    margin-top: 37px;
+}
+
+.about {
+    background-image: linear-gradient(78.93deg, #FE0B8B 1%, #540FDC 99%);
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.about .about__wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+    padding-right: 65px;
+    padding-top: 10px;
+}
+
+.about .hr {
+    display: block;
+    width: 767.5px;
+    height: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg, #550FDC 0%, #F90B8C 100%);
+    margin: 63.5px 0 72.5px;
+}
+
+.about .bg {
+    display: block;
+    color: rgba(130, 14, 198, 1);
+    width: 677px;
+    margin: 0 auto;
+}
+
+.about img {
+    margin-right: 100px;
+    width: 700px;
+}
+
+.about .about__content {
+    margin-top: 62px;
+    margin-bottom: 119px;
+}
+
+.about h2 {
+    text-align: center;
+    background-image: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3 {
+    font-family: "Unbounded", sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 88px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 500px;
+    height: 700px;
+    color: #fff;
+    background: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.card .card__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 17px 0 33px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    display: flex;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 21.5px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.card ul li::before {
+    content: "";
+    display: block;
+    width: 30px;
+    aspect-ratio: 1;
+    background: url('../assets/plus.svg') top/contain no-repeat;
+    margin-right: 30px;
+}
+
+.card ul li.bold {
+    font-weight: 500;
+}
+
+.questions {
+    background-image: #5EC3FF;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.questions .questions__wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #C8F1FF;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.questions h2 {
+    background-color: #032A41;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 29px;
+}
+
+.questions img {
+    display: block;
+}
+
+.questions a {
+    
+    font-size: 25px;
+    
+    
+    text-align: center;
+    color:#032A41;
+}
+
+.questions a img {
+    margin-right: 19px;
+}
+
+form {
+    width: 100%;
+	background:#C8F1FF;
+    border-radius: 20px;
+    padding: 27px 63px 33px;
+    color: #032A41;
+    text-align: center;
+}
+
+form p {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+}
+
+form .bg {
+    margin-top: 40px;
+    margin-bottom: 61px;
+}
+
+form input {
+    display: block;
+    width: 800px;
+	height: 20px; 
+    border: none;
+    border-radius: 100px;
+    font-family: "Arial", sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 10px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #034359;
+    margin-bottom: 15px;
+    padding: 29px 0 29px 45px;
+    outline: none;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+form h1 {
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 68.8px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #034359;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.voiti{
+    display: block;
+    align-items: stretch;
+    padding: 150px 0 150px 45px;
+
+}
+.faq {
+    background-image: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    border-radius: 20px;
+    padding: 34px 20px 25px;
+    margin-bottom: 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 38px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 13px 10px;
+    margin-bottom: 25px;
+}
+
+.faq-item p.bg {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-item p.bg img {
+    margin-right: 21px;
+}
+
+.faq-answer {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.faq-item.active {
+    border-radius: 40px;
+}
+
+.faq-item.active .faq-answer {
+    animation: open 0.5s linear forwards;
+}
+
+.faq-item:not(.active) .faq-answer {
+    animation: close 0.5s linear forwards;
+}
+
+footer {
+    position: relative;
+    background-image: linear-gradient(78.93deg, #FE0B8B 0%, #540FDC 99.54%);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+footer .footer__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 17px;
+}
+
+footer .logo {
+    font-family: "Unbounded", sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 43px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    background: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer p {
+    color: rgba(87, 5, 135, 1);
+}
+
+footer p:not(.bold) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer p.bold {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+footer p.bold img {
+    margin-right: 8px;
+}
+
+.header_s {
+    background-image: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.header_s nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_s nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.header_s nav ul li {
+    margin: 0 119px;
+    flex-shrink: 0;
+}
+
+.rates .title {
+    display: block;
+    height: 170px;
+    padding-top: 10px;
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rates .hr {
+    display: block;
+    width: 1109px;
+    height: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg, #550FDC 0%, #F90B8C 100%);
+    margin: 15px 0 22px;
+}
+
+.rates .rate-card {
+    display: flex;
+    height: 410px;
+    gap: 22px;
+    background: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    border-radius: 20px;
+    padding: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.rates .rate-card .rate-card__main {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.rates .rate-card .rate-card__title {
+    font-family: "Unbounded", sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 86px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.rates .rate-card .rate-card__about {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 17.2px;
+    letter-spacing: -0.01em;
+    padding: 21px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.rates .rate-card .rate-card__info{
+    width: 100%;
+}
+
+.rates .rate-card .rate-card__info-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rates .rate-card .rate-card__info-wrap .rate-card__subtitle{
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 27.52px;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+.rates .rate-card .rate-card__info-wrap .rate-card__subtitle::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+
+.rates .rate-card .rate-card__info-wrap .rate-card__price {
+    display: inline-block;
+    font-family: "Unbounded", sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 36.12px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-right: 30px;
+}
+
+.rates .rate-card .rate-card__info-wrap button, .rates .rate-card .rate-card__info-wrap .button {
+    display: inline-block;
+}
+
+.rates .rate-card .rate-card__info ul {
+    list-style: none;
+}
+
+.rates .rate-card .rate-card__info ul li, .rates .rate-card .rate-card__info ul p {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 21.5px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 13px;
+}
+
+.rates .rate-card .rate-card__info ul li img {
+    margin-right: 12px;
+}
+
+.rates .rate-card_2 .rate-card__info-wrap{
+    margin-bottom: 22px;
+}
+
+.rates .rate-card_2 .rate-card__info ul li, .rates .rate-card .rate-card__info ul p {
+    margin-bottom: 20px;
+} 
+
+.rates .rate-card_2 {
+    display: block;
+    padding: 6px;
+}
+
+.rates .rate-card_2 button, .rates .rate-card_2 .button {
+    border: 3px solid rgba(120, 14, 203, 0.5);
+}
+
+.rates .rate-card_2 .rate-card__wrapper {
+    display: flex;
+    height: 398px;
+    gap: 22px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    color: rgba(87, 5, 135, 1);
+}
+
+.rates .rate-card_2 .rate-card__title {
+    background: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rates .rate-card_2 .rate-card__about {
+    border: 3px solid rgba(87, 5, 135, 0.5);
+}
+
+.rates .rate-card_3 .rate-card__info-wrap{
+    margin-bottom: 22px;
+}
+
+.rates .rate-card_3 .rate-card__info ul li, .rates .rate-card .rate-card__info ul p {
+    margin-bottom: 20px;
+} 
+
+.application__wrapper, .lesson__wrapper {
+    background-color: #fff;
+    border-radius: 15px;
+    padding-bottom: 230px;
+}
+
+.container_sm {
+    max-width: 100%;
+    padding: 15px;
+}
+
+.application {
+    width: 684px;
+    height: 700px;
+    margin: 184px auto 0;
+}
+
+.application__border, .lesson{
+    background-image: linear-gradient(78.93deg, #FE0B8B 0%, #540FDC 99.54%);
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.application button {
+    margin-top: 28px;
+}
+
+.application__wrapper .header_s {
+    border-radius: 0 0 20px 20px;
+}
+
+.lesson__wrapper {
+    padding: 15px;
+}
+
+.lesson header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.lesson h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 100px;
+    font-weight: 600;
+    line-height: 86px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    background-image: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lesson .logo {
+    font-family: "Unbounded", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 21.5px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    color: #fff;
+    padding: 30px 32px;
+    background: linear-gradient(79.02deg, #FF0B8A 0.34%, #0B11FF 139.87%);
+    border-radius: 20px;
+}
+
+.lesson .hr {
+    display: block;
+    width: 535px;
+    height: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg, #550FDC 0%, #F90B8C 100%);
+    margin-bottom: 32px;
+}
+
+.lesson h3 {
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: rgba(81, 3, 126, 1);
+    margin-bottom: 42px;
+    text-transform: none;
+}
+
+.lesson .lesson__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.lesson .lesson__border {
+    position: relative;
+    top: 12px;
+    background-image: linear-gradient(78.93deg, #FE0B8B 0%, #540FDC 99.54%);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.lesson .lesson__meet {
+    background-color: #fff;
+    padding: 56px 52px;
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: rgba(87, 5, 135, 1);
+}
+
+.lesson .lesson__meet span {
+    font-weight: 600;
+}
+
+.lesson .lesson__meet button {
+    display: block;
+    border: 3px solid rgba(87, 5, 135, 0.5);
+    padding: 27px 45px;
+    margin-top: 36px;
+}
+
+.lesson h2 {
+    font-family: "Unbounded", sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    background-image: linear-gradient(90deg, #FC0B8B 0%, #520FDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.lesson .text {
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    color: rgba(81, 3, 126, 1);
+}
+
+.lesson .text span {
+    font-weight: 700;
+}
+
+.lesson .text.text_op {
+    opacity: 0.48;
+    margin: 32px 0;
+}
+
+.lesson .hr_gr {
+    display: block;
+    width: 535px;
+    height: 4px;
+    border-radius: 4px;
+    background-image: linear-gradient(90deg, #FFFA0B 0%, #0BFF80 100%);
+    margin: 27px 0 19px;
+}
+
+.lesson ul {
+    margin-top: 21px;
+}
+
+.lesson ul li {
+    margin-bottom: 12px;
+}
+
+.lesson ul li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-right: 9px;
+    background: linear-gradient(135deg, #FFFA0B 0%, #0BFF80 100%);
+}
+
+.lesson ul li:last-child{
+    margin-bottom: 0;
+}
+
+.lesson .chat {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: rgba(11, 17, 255, 1);
+    margin-bottom: 28px;
+}
+
+.lesson .text_400 {
+    font-weight: 400;
+    margin: 22px 0 16px;
+}
+
+@keyframes open {
+    0% {
+        padding: 0 15px;
+        max-height: 0; 
+        opacity: 0;
+    }
+
+    100% {
+        padding: 20px 15px 10px;
+        max-height: 300px; 
+        opacity: 1;
+    }
+}
+
+@keyframes close {
+    0% {
+        padding: 20px 15px 10px;
+        max-height: 300px; 
+        opacity: 1;
+    }
+    
+    100% {
+        padding: 0 15px;
+        max-height: 0; 
+        opacity: 0;
+    }
+}
+
+@media(max-width: 1580px) {
+    body {
+        zoom: 0.8;
+    }
+}
+
+@media(max-width: 1280px) {
+    body {
+        zoom: 0.7;
+    }
+}
+
+@media(max-width: 1120px) {
+    body {
+        zoom: 0.6;
+    }
+}
+
+@media(max-width: 980px) {
+    body {
+        zoom: 0.5;
+    }
+}
+
+@media(max-width: 790px) {
+    body {
+        zoom: 0.4;
+    }
+}
+

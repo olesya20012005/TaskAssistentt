@@ -1,0 +1,346 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #C8F1FF;
+    color: #032A41;
+}
+
+/* Контейнер */
+.container1 {
+    display: flex;
+    height: 100vh;
+}
+
+/* Левое меню */
+.sidebar {
+    width: 260px;
+    background-color: #5EC3FF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0 20px 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: auto;
+    width: 130px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #032A41;
+}
+
+/* Кнопки меню */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-buttons .button {
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    color: #032A41;
+    font-weight: bold;
+    background-color: #5EC3FF;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-buttons .button.active {
+    background-color: #C8F1FF;
+}
+
+.menu-buttons .button:hover {
+    background-color: #C8F1FF;
+}
+
+.logout {
+    text-decoration: none;
+    color: #1d72a3;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    display: block;
+}
+
+/* Основной контент */
+.main-content {
+    flex-grow: 1;
+    background-color: #C8F1FF;
+    padding: 30px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main-header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-header h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #032A41;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    background-color: #bdc3c7;
+    border-radius: 50%;
+}
+
+.user span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #032A41;
+}
+
+/* История заявок */
+.request-history {
+    margin-top: 20px;
+}
+
+.request-row {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #f4f4f4; /* Основной фон заявки */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 2px solid transparent; /* Прозрачный бордер по умолчанию */
+    box-shadow: #032A41;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.request-row:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Больше тени при наведении */
+    border-color: #032A41; /* Синий бордер при наведении */
+}
+
+.request-item {
+    flex: 3;
+    font-weight: 500;
+    color: #032A41; /* Тёмно-синий цвет текста */
+}
+
+.request-date {
+    flex: 1;
+    text-align: center;
+    color: #7f8c8d; /* Серый цвет текста */
+    font-weight: bold;
+}
+
+.request-status {
+    flex: 1;
+    text-align: center;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* Статус: Выполнено */
+.request-status.completed {
+    background-color: #b2fab4; /* Светло-зелёный */
+    color: #4caf50; /* Ярко-зелёный */
+}
+
+/* Статус: Отменено */
+.request-status.cancelled {
+    background-color: #ffcccb; /* Светло-красный */
+    color: #f44336; /* Красный */
+}
+
+/* Статус: Ожидает */
+.request-status.pending {
+    background-color: #ffe0b2; /* Светло-оранжевый */
+    color: #ff9800; /* Оранжевый */
+}
+
+
+.request-form {
+    width: auto; /* Максимальная ширина формы */
+    margin: 0 auto; /* Центрирование формы */
+    padding: 20px; /* Отступы внутри формы */
+    background-color: #ffffff; /* Белый фон для формы */
+    border-radius: 8px; /* Скругление углов формы */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Расстояние между группами полей */
+}
+
+.form-row {
+    display: flex; /* Используем Flexbox для выравнивания элементов в строку */
+    justify-content: space-between; /* Распределение элементов */
+}
+
+.form-group {
+    flex: 1; /* Элементы занимают равное пространство */
+    margin-right: 10px; /* Отступ справа для всех элементов */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+label {
+    display: block; /* Метки занимают всю ширину контейнера */
+    margin-bottom: 5px; /* Отступ между меткой и полем ввода */
+    color: #032A41; /* Цвет меток */
+}
+
+input[type="text"], 
+input[type="tel"], 
+select, 
+textarea {
+    width: 100%; /* Полная ширина для всех полей ввода */
+    padding: 10px; /* Отступы внутри полей */
+    border: 1px solid #ccc; /* Цвет границы полей */
+    border-radius: 4px; /* Скругление углов */
+    box-sizing: border-box; /* Учет отступов и границ в ширине */
+    transition: border-color 0.3s; /* Плавный переход для изменения цвета границы */
+}
+
+input[type="text"]:focus, 
+input[type="tel"]:focus, 
+select:focus, 
+textarea:focus {
+    border-color: #4caf50; /* Цвет границы при фокусе */
+    outline: none; /* Убираем обводку по умолчанию */
+}
+
+textarea {
+    min-height: 70px; /* Минимальная высота для текстовой области */
+}
+
+.payment-options {
+    display: flex; /* Используем Flexbox для выравнивания опций */
+    gap: 20px; /* Расстояние между опциями оплаты */
+}
+
+.submit-button {
+    background-color: #032A41; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    padding: 10px 15px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границы */
+    border-radius: 8px; /* Скругление углов кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    font-size: 16px; /* Размер текста кнопки */
+    width: 100%; /* Полная ширина кнопки */
+    transition: background-color 0.3s; /* Плавный переход для изменения цвета фона */
+}
+
+.submit-button:hover {
+    background-color: #d7e8d7; /* Цвет кнопки при наведении */
+}
+
+.required {
+    color: red; /* Цвет для обязательных полей */
+}
+
+
+/* Панель админа */
+.requestions table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+.requestions th, td {
+    border: 1px solid #71b6cd;
+    padding: 10px;
+    text-align: left;
+}
+.requestions th {
+    background-color: #E3F8FF;
+}
+.action-menu {
+    position: relative;
+    display: inline-block;
+}
+.action-menu .menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+    border: 1px solid #E3F8FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.action-menu:hover .menu-content {
+    display: block;
+}
+.menu-content a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #032A41;
+}
+.menu-content a:hover {
+    background-color: #f4f4f4;
+}
+.status-select {
+    border: 1px solid #E3F8FF;
+    padding: 5px;
+    border-radius: 4px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: white;
+    border: 1px solid #E3F8FF;
+    box-shadow: #032A41;
+    padding: 20px;
+}
+.modal-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.modal-content {
+    margin-bottom: 20px;
+}
+.modal-close {
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
